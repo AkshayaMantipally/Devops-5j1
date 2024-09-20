@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4; /* Light gray background color */
+             background-image: url('https://image.shutterstock.com/image-illustration/volleyball-ball-metal-wall-background-260nw-142268431.jpg'); 
+            background-size: cover; 
+             background-position: center; 
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .radio-group, .checkbox-group {
+            margin-bottom: 10px;
+        }
+        .radio-group label, .checkbox-group label {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<form action="submit_registration.php" method="post">
+    <h2>Sports Registration Form</h2>
+
+    <h3>Personal Information</h3>
+
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" name="fullName" required>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required>
+
+    <label>Gender:</label>
+    <div class="radio-group">
+        <input type="radio" id="male" name="gender" value="Male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="Female" required>
+        <label for="female">Female</label>
+    </div>
+
+    <label for="contactNumber">Contact Number:</label>
+    <input type="tel" id="contactNumber" name="contactNumber" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="address">Home Address:</label>
+    <textarea id="address" name="address" required></textarea>
+
+    <h3>Emergency Contact Information</h3>
+
+    <label for="emergencyContactName">Emergency Contact Name:</label>
+    <input type="text" id="emergencyContactName" name="emergencyContactName" required>
+
+    <label for="relationship">Relationship to Participant:</label>
+    <input type="text" id="relationship" name="relationship" required>
+
+    <label for="emergencyContactNumber">Contact Number:</label>
+    <input type="tel" id="emergencyContactNumber" name="emergencyContactNumber" required>
+
+    <h3>Sports Information</h3>
+
+    <label for="sport">Sport you are registering for:</label>
+    <input type="text" id="sport" name="sport" required>
+
+    <label for="jerseySize">Preferred Jersey Size:</label>
+    <select id="jerseySize" name="jerseySize" required>
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option>
+        <option value="Extra Large">Extra Large</option>
+    </select>
+
+    <h3>Health Information</h3>
+
+    <label for="medicalConditions">Do you have any medical conditions or injuries we should be aware of?</label>
+    <div class="radio-group">
+        <input type="radio" id="medicalYes" name="medical" value="Yes">
+        <label for="medicalYes">Yes</label>
+        <input type="radio" id="medicalNo" name="medical" value="No" checked>
+        <label for="medicalNo">No</label>
+
+    <div class="checkbox-group">
+        <input type="checkbox" id="waiver" name="waiver" required>
+        <label for="waiver">I hereby acknowledge and assume all risks and responsibilities for personal injury or property damage.</label>
+    </div>
+    <button type="submit">Submit Registration</button>
+</form>
+
+</body>
+</html>
